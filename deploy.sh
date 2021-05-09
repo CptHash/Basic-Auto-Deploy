@@ -4,6 +4,7 @@ function log {
   echo $(date) "--> " $1 >> ~/deploy.log
   sudo cp ~/deploy.log /var/www/html/deploy.log
   curl -i -H "Accept: application/json" -H "Content-Type:application/json" -X POST --data "{\"content\": \"--> $1\"}" WEBHOOK_URL_HERE
+}
 
 cd ~/codereview.fr
 
